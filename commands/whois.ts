@@ -2,6 +2,7 @@ import IRE from "../ire";
 import Discord from "discord.js";
 
 export const name = 'whois';
+export const aliases = ['finger'];
 
 export const description = 'Displays information on a specific player. Usage: !whois Amirae'
 
