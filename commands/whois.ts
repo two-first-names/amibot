@@ -38,6 +38,9 @@ export const execute = async (message: Discord.Message, args: [string]) => {
                 break;
         }
 
+        if(character.name === "Amirae")
+            colour = 'LUMINOUS_VIVID_PINK';
+
         const characterEmbed = new Discord.MessageEmbed()
             .setTitle(character.fullname)
             .setColor(colour)
