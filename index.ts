@@ -11,9 +11,7 @@ const commandFiles = fs.readdirSync('./dist/commands').filter(file => file.endsW
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     commands.set(command.name, command);
-    for (const alias of command.aliases) {
-        commands.set(alias, command);
-    }
+    command.aliases.forEach((a: string) => commands.set(a, command));
 }
 
 const prefix = '!'
