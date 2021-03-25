@@ -34,7 +34,7 @@ export const execute = async (message: Discord.Message, args: [string]) => {
                 colour = "#00db7f";
                 break;
             case "Multiverse":
-                colour = "#ffffff";
+                colour = "#daa51b";
                 break;
         }
 
