@@ -3,6 +3,8 @@ import Discord from "discord.js";
 
 export const name = 'qwho';
 
+export const description = 'Shows all online players.'
+
 export const execute = async (message: Discord.Message, args: [string]) => {
     try {
         const characters = await IRE.getCharacters();

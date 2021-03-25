@@ -3,6 +3,8 @@ import Discord from "discord.js";
 
 export const name = 'whois';
 
+export const description = 'Displays information on a specific player. Usage: !whois Amirae'
+
 export const execute = async (message: Discord.Message, args: [string]) => {
     const name = args[0];
     if(name === undefined) {

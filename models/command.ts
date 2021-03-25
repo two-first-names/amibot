@@ -1,6 +1,7 @@
-import {Message} from "discord.js";
+import Discord from "discord.js";
 
 export default interface Command {
     name: string,
-    execute: (message: Message, args: string[]) => void
+    description: string,
+    execute: (message: Discord.Message, args: string[]) => void
 }
