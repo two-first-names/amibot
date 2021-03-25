@@ -1,6 +1,8 @@
 import Discord, {Message} from "discord.js"
 import * as fs from "fs";
 import Command from "./models/command";
+import express, {Request, Response} from "express"
+
 const client = new Discord.Client();
 const commands = new Discord.Collection<string, Command>();
 
@@ -31,3 +33,11 @@ client.on('message', async (message: Message) => {
 
 
 client.login(process.env.DISCORD_TOKEN)
+
+const app = express();
+
+app.get('/', (req: Request, res: Response) => {
+    res.send("This isn't a real web server.")
+})
+
+app.listen(process.env.PORT);
