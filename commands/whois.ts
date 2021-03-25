@@ -51,8 +51,10 @@ export const execute = async (message: Discord.Message, args: [string]) => {
             .addField('Level', character.level, true)
             .addField('Kills', character.kills, true)
             .addField('Deaths', character.deaths, true)
-            .addField('Explorer Rank', character.explorerrank)
-            .addField('Description', character.description);
+            .addField('Explorer Rank', character.explorerrank);
+
+        if(character.description.length <= 1024)
+            characterEmbed.addField('Description', character.description);
 
         message.channel.send(characterEmbed);
     } catch (error) {
