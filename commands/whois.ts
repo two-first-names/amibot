@@ -33,6 +33,9 @@ export const execute = async (message: Discord.Message, args: [string]) => {
             case "Serenwilde":
                 colour = "#00db7f";
                 break;
+            case "Multiverse":
+                colour = "#ffffff";
+                break;
         }
 
         const characterEmbed = new Discord.MessageEmbed()
