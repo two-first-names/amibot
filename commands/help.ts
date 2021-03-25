@@ -23,4 +23,6 @@ export const execute = (message: Discord.Message) => {
     for (const command of commands.values()) {
         helpEmbed.addField(command.name, command.description || "No description set")
     }
+
+    message.channel.send(helpEmbed);
 }
