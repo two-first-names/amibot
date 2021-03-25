@@ -7,15 +7,9 @@ const commands = new Discord.Collection<string, Command>();
 const commandFiles = fs.readdirSync('./dist/commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-    const command = require(`./dist/commands/${file}`);
-    console.log(command)
+    const command = require(`./commands/${file}`);
     commands.set(command.name, command);
 }
-
-
-client.once('ready', async () => {
-    console.log("Ready!")
-});
 
 const prefix = '!'
 
@@ -26,8 +20,6 @@ client.on('message', async (message: Message) => {
     const command = args.shift()?.toLowerCase() || "";
 
     if (!commands.has(command)) return;
-
-    console.log('command')
 
     try {
         await commands.get(command)?.execute(message, args);
