@@ -12,7 +12,7 @@ for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     commands.set(command.name, command);
     for (const alias of command.aliases) {
-        command.set(alias, command);
+        commands.set(alias, command);
     }
 }
 
